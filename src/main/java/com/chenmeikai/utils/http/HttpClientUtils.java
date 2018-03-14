@@ -12,9 +12,14 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 
 public class HttpClientUtils {
+	
+	private final static Logger log =LoggerFactory.getLogger(HttpClientUtils.class);
 
 	public static String get(String url) {
 		CloseableHttpClient httpclient = HttpClientPool.getHttpClient();
@@ -36,7 +41,7 @@ public class HttpClientUtils {
 					if (entity != null) {
 						// 打印响应内容
 						result = EntityUtils.toString(entity);
-						System.out.println("Response content: " + result);
+						log.info("Response content: " + result);
 					}
 				}
 			} finally {
@@ -59,6 +64,13 @@ public class HttpClientUtils {
 		return result;
 	}
 
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		get("http://www.baidu.com");
 	}

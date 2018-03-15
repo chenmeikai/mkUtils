@@ -46,7 +46,7 @@ public class HttpClientPool {
     // 这里就直接默认固定了,因为以下三个参数在新建的method中仍然可以重新配置并被覆盖.  
     static final int connectionRequestTimeout = 5000;// ms毫秒,从池中获取链接超时时间  
     static final int connectTimeout = 5000;// ms毫秒,建立链接超时时间  
-    static final int socketTimeout = 30000;// ms毫秒,读取超时时间  
+    static final int socketTimeout = 5000;// ms毫秒,读取超时时间  
   
     // 总配置,主要涉及是以下两个参数,如果要作调整没有用到properties会比较后麻烦,但鉴于一经粘贴,随处可用的特点,就不再做依赖性配置化处理了.  
     // 而且这个参数同一家公司基本不会变动.  

@@ -71,7 +71,6 @@ public class HttpClientFactory {
             manager.setValidateAfterInactivity(5*1000);
 
             //默认请求配置
-
             RequestConfig defaultRequestConfig = RequestConfig.custom()
                     .setConnectTimeout(2*1000) //设置连接超时时间，2s
                     .setSocketTimeout(5*1000) //设置等待数据超时时间，5s

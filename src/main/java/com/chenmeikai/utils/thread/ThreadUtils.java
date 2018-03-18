@@ -33,7 +33,7 @@ public class ThreadUtils {
      * @param runnable
      * @return
      */
-    static ExecutorService cachedThreadRun(Runnable runnable) {
+    static ExecutorService cachedRun(Runnable runnable) {
         if (cachedThreadPool == null)
             cachedThreadPool = Executors.newCachedThreadPool();
         cachedThreadPool.submit(runnable);
@@ -45,7 +45,7 @@ public class ThreadUtils {
      * @param runnable
      * @return
      */
-    public static ExecutorService fixedThreadRun(Runnable runnable) {
+    public static ExecutorService fixedRun(Runnable runnable) {
         if (fixedThreadPool == null)
             fixedThreadPool = Executors.newFixedThreadPool(Runtime.getRuntime()
                     .availableProcessors());
@@ -60,7 +60,7 @@ public class ThreadUtils {
      * @param unit  时间单位
      * @return
      */
-    public static ExecutorService scheduledThreadRun(Runnable runnable, long delay, TimeUnit unit) {
+    public static ExecutorService scheduledRun(Runnable runnable, long delay, TimeUnit unit) {
         if (scheduledThreadPool == null)
             scheduledThreadPool = Executors.newScheduledThreadPool(MAX_THREAD);
         scheduledThreadPool.schedule(runnable, delay, unit);
@@ -75,7 +75,7 @@ public class ThreadUtils {
      * @param unit  时间单位
      * @return
      */
-    public static ExecutorService scheduledThreadRun(Runnable runnable, long delay,int repeat, TimeUnit unit) {
+    public static ExecutorService scheduledRun(Runnable runnable, long delay,int repeat, TimeUnit unit) {
         if (scheduledThreadPool == null)
             scheduledThreadPool = Executors.newScheduledThreadPool(MAX_THREAD);
         scheduledThreadPool.scheduleAtFixedRate(runnable, delay,repeat, unit);
@@ -87,13 +87,36 @@ public class ThreadUtils {
      * @param runnable
      * @return
      */
-    public static ExecutorService singleThreadRun(Runnable runnable) {
+    public static ExecutorService singleRun(Runnable runnable) {
         if (singleThreadPool == null)
             singleThreadPool = Executors.newSingleThreadExecutor();
         singleThreadPool.submit(runnable);
         return singleThreadPool;
     }
+    
+    
+    /**
+     * 关闭连接池
+     */
+    public final static void cachedPoolClose() {
+    	 if (cachedThreadPool != null)
+    		 cachedThreadPool.shutdown();
+    }
+    public final static void fixedPoolClose() {
+    	 if (fixedThreadPool != null)
+    		 fixedThreadPool.shutdown();
+    }
+    public final static void scheduledPoolClose() {
+    	 if (scheduledThreadPool != null)
+    		 scheduledThreadPool.shutdown();
+    }
+    public final static void singlePoolClose() {
+    	 if (singleThreadPool != null)
+    		 singleThreadPool.shutdown();
+    }
 
+    
+    
   
     public static void main(String[] args) {
         final Long startTime = System.currentTimeMillis();
@@ -103,7 +126,7 @@ public class ThreadUtils {
 //            System.out.println(finalI);
             final int finalI = i;
             Runnable task = () -> System.out.println(finalI);
-            executorService = ThreadUtils.fixedThreadRun(task);
+            executorService = ThreadUtils.fixedRun(task);
         }
 
         if (executorService != null) {

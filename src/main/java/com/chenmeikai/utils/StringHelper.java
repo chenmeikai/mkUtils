@@ -16,8 +16,8 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ClassName:StringHelper <br/>
@@ -33,7 +33,7 @@ public class StringHelper {
     /**
      * StringHelper 日志
      */
-    private static Logger logger = LogManager.getLogger(StringHelper.class);
+	private final static Logger logger = LoggerFactory.getLogger(StringHelper.class);
     
     /**
      * 描述： 构造方法

@@ -16,13 +16,12 @@ import java.net.URL;
 import java.util.List;
 import java.util.zip.CRC32;
 import java.util.zip.CheckedInputStream;
-
 import org.apache.commons.io.FilenameUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FileHelper {
 
@@ -34,7 +33,7 @@ public class FileHelper {
     /**
      * FileHelper 日志
      */
-    private static Logger logger = LogManager.getLogger(FileHelper.class);
+    private final static Logger logger = LoggerFactory.getLogger(FileHelper.class);
 
     /**
      * 获得文件的CRC32校验和

@@ -13,6 +13,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.AbstractHttpMessage;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -29,13 +30,13 @@ import java.util.Map;
 
 /**
  * 
- * @Description:httpClient 有连接池  
+ * @Description:httpClient，无连接池 
  * @author: cmk 
- * @date:   2018年3月18日 上午10:56:59
+ * @date:   2018年3月18日 上午10:55:49
  */
-public class HttpClientUtils {
+public class HttpClientUtil {
 
-	private final static Logger log = LoggerFactory.getLogger(HttpClientUtils.class);
+	private final static Logger log = LoggerFactory.getLogger(HttpClientUtil.class);
 	
 	/*
 	 * get方法
@@ -102,7 +103,7 @@ public class HttpClientUtils {
 	public static String baseGet(String urlString, Map<String, String> headers, int connectTimeout, int socketTimeout) {
 		String result = "";
 		// 获取httpclient连接
-		CloseableHttpClient httpclient = HttpClientPool.getHttpClient();
+		CloseableHttpClient httpclient = HttpClients.createDefault();;
 		// 定义请求设置 ConnectTimeout连接超时，SocketTimeout读取数据超时
 		RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(connectTimeout)
 				.setSocketTimeout(socketTimeout).build();
@@ -155,6 +156,11 @@ public class HttpClientUtils {
 			e.printStackTrace();
 		} finally {
 			httpGet.abort();
+			try {
+				httpclient.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return result;
 	}
@@ -167,7 +173,7 @@ public class HttpClientUtils {
 		
 		String result = "";
 		// 获取httpclient连接
-		CloseableHttpClient httpclient = HttpClientPool.getHttpClient();
+		CloseableHttpClient httpclient = HttpClients.createDefault();
 		// 定义请求设置 ConnectTimeout连接超时，SocketTimeout读取数据超时
 		RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(connectTimeout)
 				.setSocketTimeout(socketTimeout).build();
@@ -225,6 +231,11 @@ public class HttpClientUtils {
 			e.printStackTrace();
 		} finally {
 			httpPost.abort();
+			try {
+				httpclient.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return result;
 	}

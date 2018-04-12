@@ -1,4 +1,4 @@
-package com.chenmeikai.utils.date;
+package com.chenmeikai.utils.Date;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

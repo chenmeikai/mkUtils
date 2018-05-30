@@ -1,4 +1,4 @@
-package com.chenmeikai.utils.Date;
+package com.chenmeikai.utils.date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

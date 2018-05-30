@@ -1,5 +1,5 @@
  
-package com.chenmeikai.utils.Date;
+package com.chenmeikai.utils.date;
 
 import java.io.Serializable;
 import java.text.DateFormat;

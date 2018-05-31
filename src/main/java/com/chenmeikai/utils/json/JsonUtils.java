@@ -49,26 +49,58 @@ public class JsonUtils {
 	    }  
 	      
 	  
-	  
-	    public static Object toBean(String text) {  
-	        return JSON.parse(text);  
+	    /**
+	     * 转化为JSONObject
+	     * @param text
+	     * @return
+	     */
+	    public static JSONObject toJsonObject(String text) {  
+	        return JSONObject.parseObject(text); 
+	    } 
+	    
+	    /**
+	     * 转化为object
+	     * @param text
+	     * @return
+	     */
+	    public static Object toObject(String text) {  
+	    	return JSON.parse(text);  
 	    }  
-	  
+	    
+	    /**
+	     * 转化为javaBean
+	     * @param text
+	     * @param clazz
+	     * @return
+	     */
 	    public static <T> T toBean(String text, Class<T> clazz) {  
 	        return JSON.parseObject(text, clazz);  
 	    }  
 	  
-	    // 转换为数组  
+	    /**
+	     * 转换为数组  
+	     * @param text
+	     * @return
+	     */
 	    public static <T> Object[] toArray(String text) {  
 	        return toArray(text, null);  
 	    }  
 	  
-	    // 转换为数组  
+	    /**
+	     * 转换为数组  
+	     * @param text
+	     * @return
+	     */  
 	    public static <T> Object[] toArray(String text, Class<T> clazz) {  
 	        return JSON.parseArray(text, clazz).toArray();  
 	    }  
 	  
-	    // 转换为List  
+	    /**
+	     * 转化为list集合  
+	     * @param text
+	     * @param clazz
+	     * @return
+	     */
 	    public static <T> List<T> toList(String text, Class<T> clazz) {  
 	        return JSON.parseArray(text, clazz);  
 	    }  
@@ -99,8 +131,8 @@ public class JsonUtils {
 	     * @param s  
 	     * @return  
 	     */  
-	    public static Map stringToCollect(String s) {  
-	        Map m = JSONObject.parseObject(s);  
+	    public static Map<String,Object> stringToMap(String s) {  
+	        Map<String,Object> m = JSONObject.parseObject(s);  
 	        return m;  
 	    }  
 	      
@@ -109,7 +141,7 @@ public class JsonUtils {
 	     * @param m  
 	     * @return  
 	     */  
-	    public static String collectToString(Map m) {  
+	    public static String collectToString(Map<String,Object> m) {  
 	        String s = JSONObject.toJSONString(m);  
 	        return s;  
 	    } 

@@ -16,6 +16,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
@@ -25,15 +26,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class XMLHelper {
-	private final static Logger logger = LoggerFactory.getLogger(XMLHelper.class);
+    private final static Logger logger = LoggerFactory.getLogger(XMLHelper.class);
 
     /**
      * 把XML按照给定的XSL进行转换，返回转换后的值
-     * 
-     * @param xml
-     *            xml
-     * @param xsl
-     *            xsl
+     *
+     * @param xml xml
+     * @param xsl xsl
      * @return
      * @throws Exception
      */
@@ -72,11 +71,9 @@ public class XMLHelper {
 
     /**
      * 把XML按用户定义好的XSL样式进行输出
-     * 
-     * @param xmlFilePath
-     *            XML文档
-     * @param xsl
-     *            XSL样式
+     *
+     * @param xmlFilePath XML文档
+     * @param xsl         XSL样式
      * @return 样式化后的字段串
      */
     public static String xml2xsl(String xmlFilePath, String xsl)
@@ -117,9 +114,8 @@ public class XMLHelper {
 
     /**
      * 读取XML文档，返回Document对象.<br>
-     * 
-     * @param xmlFile
-     *            XML文件路径
+     *
+     * @param xmlFile XML文件路径
      * @return Document 对象
      */
     public static Document getDocument(String xmlFile) throws Exception {
@@ -136,9 +132,8 @@ public class XMLHelper {
 
     /**
      * 读取XML文档，返回Document对象.<br>
-     * 
-     * @param xmlFile
-     *            file对象
+     *
+     * @param xmlFile file对象
      * @return Document 对象
      */
     public static Document getDocument(File xmlFile) {
@@ -152,9 +147,8 @@ public class XMLHelper {
     }
 
     /**
-     * 
      * 描述：读取XML文档，先从指定的位置读取，没有再通过文件流读取(读jar包的配置文件) 时间：2015-5-15 下午9:13:12
-     * 
+     *
      * @param cls
      * @param propFile
      * @return
@@ -197,9 +191,8 @@ public class XMLHelper {
 
     /**
      * 读取XML字串，返回Document对象
-     * 
-     * @param xmlString
-     *            XML文件路径
+     *
+     * @param xmlString XML文件路径
      * @return Document 对象
      */
     public static Document getDocumentFromString(String xmlString) {
@@ -217,13 +210,10 @@ public class XMLHelper {
 
     /**
      * 描述：把xml输出成为html 作者： 时间：Oct 29, 2008 4:57:56 PM
-     * 
-     * @param xmlDoc
-     *            xmlDoc
-     * @param xslFile
-     *            xslFile
-     * @param encoding
-     *            编码
+     *
+     * @param xmlDoc   xmlDoc
+     * @param xslFile  xslFile
+     * @param encoding 编码
      * @return
      * @throws Exception
      */
@@ -273,18 +263,15 @@ public class XMLHelper {
 
     /**
      * 描述：把xml输出成为html 作者： 时间：Oct 29, 2008 4:58:48 PM
-     * 
-     * @param xmlFile
-     *            xmlFile
-     * @param xslFile
-     *            xslFile
-     * @param encoding
-     *            编码
+     *
+     * @param xmlFile  xmlFile
+     * @param xslFile  xslFile
+     * @param encoding 编码
      * @return
      * @throws Exception
      */
     public static String xmlFile2html(String xmlFile, String xslFile,
-            String encoding) throws Exception {
+                                      String encoding) throws Exception {
         if (StringHelper.isEmpty(xmlFile)) {
             throw new Exception("xml string is empty");
         }
@@ -329,11 +316,9 @@ public class XMLHelper {
 
     /**
      * 描述： 作者： 时间：Oct 29, 2008 5:00:10 PM
-     * 
-     * @param name
-     *            名
-     * @param element
-     *            元素
+     *
+     * @param name    名
+     * @param element 元素
      * @return
      */
     public static String getString(String name, Element element) {
@@ -342,17 +327,14 @@ public class XMLHelper {
 
     /**
      * 将一个XML文档保存至文件中.
-     * 
-     * @param doc
-     *            要保存的XML文档对象.
-     * @param filePath
-     *            要保存到的文档路径.
-     * @param format
-     *            要保存的输出格式
+     *
+     * @param doc      要保存的XML文档对象.
+     * @param filePath 要保存到的文档路径.
+     * @param format   要保存的输出格式
      * @return true代表保存成功，否则代表不成功.
      */
     public static boolean savaToFile(Document doc, String filePathName,
-            OutputFormat format) {
+                                     OutputFormat format) {
         XMLWriter writer;
         try {
             String filePath = FileHelper.getFullPath(filePathName);
@@ -377,11 +359,9 @@ public class XMLHelper {
 
     /**
      * 将一个XML文档保存至文件中.
-     * 
-     * @param filePath
-     *            要保存到的文档路径.
-     * @param doc
-     *            要保存的XML文档对象.
+     *
+     * @param filePath 要保存到的文档路径.
+     * @param doc      要保存的XML文档对象.
      * @return true代表保存成功，否则代表不成功.
      */
     public static boolean writeToXml(String filePathName, Document doc) {

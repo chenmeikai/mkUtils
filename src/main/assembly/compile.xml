@@ -1,38 +1,38 @@
 <assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
-  
-  <id>meikai</id>
-  
-  <!-- 打包格式 ：zip、tar、tar.gz (or tgz)、tar.bz2 (or tbz2)、jar、dir、war -->
-  <formats>
-    <format>zip</format>
-    <format>dir</format>
-  </formats>
-  
-  <fileSets>
-  
-     <fileSet>
-        <directory>src/main/java</directory><!--需要打包的目录 -->
-        <outputDirectory>/java</outputDirectory> <!-- 打包后输出的路径 -->
-     </fileSet>
-     
-     <!-- 启动路径 -->
-     <!-- <fileSet>
-        <directory>src/main/bin</directory>需要打包的目录
-        <outputDirectory>/bin</outputDirectory> 打包后输出的路径
-     </fileSet> -->
-     
-     <fileSet>
-        <directory>src/main/resources</directory>
-        <outputDirectory>/resources</outputDirectory>
-     </fileSet>
-  </fileSets>
 
-  <dependencySets>
-     <dependencySet>
-        <useProjectArtifact>true</useProjectArtifact><!-- 当前项目构件是否包含在这个依赖集合里 -->
-        <outputDirectory>lib</outputDirectory><!--将scope为runtime的依赖包打包到lib目录下。 -->
+    <id>meikai</id>
+
+    <!-- 打包格式 ：zip、tar、tar.gz (or tgz)、tar.bz2 (or tbz2)、jar、dir、war -->
+    <formats>
+        <format>zip</format>
+        <format>dir</format>
+    </formats>
+
+    <fileSets>
+
+        <fileSet>
+            <directory>src/main/java</directory><!--需要打包的目录 -->
+            <outputDirectory>/java</outputDirectory> <!-- 打包后输出的路径 -->
+        </fileSet>
+
+        <!-- 启动路径 -->
+        <!-- <fileSet>
+           <directory>src/main/bin</directory>需要打包的目录
+           <outputDirectory>/bin</outputDirectory> 打包后输出的路径
+        </fileSet> -->
+
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>/resources</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact><!-- 当前项目构件是否包含在这个依赖集合里 -->
+            <outputDirectory>lib</outputDirectory><!--将scope为runtime的依赖包打包到lib目录下。 -->
         </dependencySet>
-  </dependencySets>
+    </dependencySets>
 </assembly>

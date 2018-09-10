@@ -15,7 +15,7 @@ import java.util.jar.JarFile;
  * ClassName:ClassUtils. <br/>
  * Java类反射的工具类.
  * <p/>
- * 
+ *
  * @author qiyongkang
  * @version 1.0.0
  * @since JDK 1.6
@@ -24,7 +24,7 @@ public abstract class ClassUtils {
 
     /**
      * INNER_CLASS_NAME_DELIMITER: 内部类的类名称在全路径中的分隔符： <code>$</code>.
-     * 
+     *
      * @since JDK 1.6
      */
     public final static String INNER_CLASS_NAME_DELIMITER = "$";
@@ -63,10 +63,9 @@ public abstract class ClassUtils {
     /**
      * 是否为普通的Java类型. <br/>
      *
-     * @author qiyongkang
-     * @param clazz
-     *            要判断的类型
+     * @param clazz 要判断的类型
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isNormalJavaType(Class<?> clazz) {
@@ -79,10 +78,9 @@ public abstract class ClassUtils {
     /**
      * isInnerClass: 判断一个类是否为内部类. <br/>
      *
-     * @author qiyongkang
-     * @param clazz
-     *            要判断的类
+     * @param clazz 要判断的类
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isInnerClass(Class<?> clazz) {
@@ -92,11 +90,10 @@ public abstract class ClassUtils {
     /**
      * isPublicInnerClass: 判断一个类是否为公共的内部类. <br/>
      * 如果类的修饰符不是<code>public</code>那么就返回False.
-     * 
-     * @author qiyongkang
-     * @param clazz
-     *            要判断的类
+     *
+     * @param clazz 要判断的类
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isPublicInnerClass(Class<?> clazz) {
@@ -106,10 +103,9 @@ public abstract class ClassUtils {
     /**
      * isStaticInnerClass: 判断一个类是否为静态内部类. <br/>
      *
-     * @author qiyongkang
-     * @param clazz
-     *            要判断的类
+     * @param clazz 要判断的类
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isStaticInnerClass(Class<?> clazz) {
@@ -119,11 +115,10 @@ public abstract class ClassUtils {
     /**
      * isPublicStaticInnerClass: 判断一个类是否为公共的静态内部类. <br/>
      * 如果类的修饰符不是<code>public</code>那么就返回False.
-     * 
-     * @author qiyongkang
-     * @param clazz
-     *            要判断的类
+     *
+     * @param clazz 要判断的类
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isPublicStaticInnerClass(Class<?> clazz) {
@@ -135,11 +130,10 @@ public abstract class ClassUtils {
      * 要判断一个类是否能够被实例化，这个类的修饰符必须是公共类，并且不允许这个类是抽象类，并且不允许这个是匿名类，
      * 并且不允许这个类是接口类，并且不允许这个类是枚举类，并且不允许是注解类。
      * 在这之后，如果这个类不是内部类那么就可以被实例化，如果是内部类，那么只能是公共的内部类以及公共的静态内部类才能够被实例化.
-     * 
-     * @author qiyongkang
-     * @param clazz
-     *            要判断的类
+     *
+     * @param clazz 要判断的类
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isCanInstance(Class<?> clazz) {
@@ -152,10 +146,9 @@ public abstract class ClassUtils {
     /**
      * isCanInstance: 根据类名称的全路径判断一个类是否可以被实例化. <br/>
      *
-     * @author qiyongkang
-     * @param className
-     *            要判断的类名称的全路径
+     * @param className 要判断的类名称的全路径
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isCanInstance(String className) {
@@ -174,10 +167,9 @@ public abstract class ClassUtils {
     /**
      * newInstance: 根据类的完整路径，创建类对象. <br/>
      *
-     * @author qiyongkang
-     * @param className
-     *            类的完整路径
+     * @param className 类的完整路径
      * @return 创建的对象
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static Object newInstance(String className) {
@@ -204,14 +196,11 @@ public abstract class ClassUtils {
     /**
      * newInnerClassInstance: 实例化一个内部类. <br/>
      *
-     * @author qiyongkang
-     * @param className
-     *            类名称的全路径
-     * @param clazz
-     *            要实例化的类
+     * @param className 类名称的全路径
+     * @param clazz     要实例化的类
      * @return 实例化之后的对象
-     * @throws Exception
-     *             实例化类遇到错误时抛出的异常
+     * @throws Exception 实例化类遇到错误时抛出的异常
+     * @author qiyongkang
      * @since JDK 1.6
      */
     private static Object newInnerClassInstance(String className, Class<?> clazz) throws Exception {
@@ -233,12 +222,10 @@ public abstract class ClassUtils {
     /**
      * newInstance: 创建一个对象实例. <br/>
      *
-     * @author qiyongkang
-     * @param className
-     *            创建对象的全路径
-     * @param clazz
-     *            创建的对象类型
+     * @param className 创建对象的全路径
+     * @param clazz     创建的对象类型
      * @return 对象实例
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static <T> T newInstance(String className, Class<T> clazz) {
@@ -252,10 +239,9 @@ public abstract class ClassUtils {
     /**
      * getPropertyValues: 获取类中的私有属性的值. <br/>
      *
-     * @author qiyongkang
-     * @param obj
-     *            要获取的类
+     * @param obj 要获取的类
      * @return 获取的属性值数组
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static Object[] getPropertyValues(Object obj) {
@@ -299,10 +285,9 @@ public abstract class ClassUtils {
     /**
      * isNormalJavaType: 是否为普通的Java类型. <br/>
      *
-     * @author qiyongkang
-     * @param f
-     *            要判断的字段
+     * @param f 要判断的字段
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isNormalJavaType(Field f) {
@@ -316,10 +301,9 @@ public abstract class ClassUtils {
     /**
      * isAvailable: 判断一个类是否可以用. <br/>
      *
-     * @author qiyongkang
-     * @param className
-     *            类的全路径
+     * @param className 类的全路径
      * @return True/False
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static boolean isAvailable(String className) {
@@ -334,8 +318,8 @@ public abstract class ClassUtils {
     /**
      * getDefaultClassLoader: 获取默认的类加载器. <br/>
      *
-     * @author qiyongkang
      * @return 类加载器
+     * @author qiyongkang
      * @since JDK 1.6
      */
     public static ClassLoader getDefaultClassLoader() {
@@ -353,10 +337,9 @@ public abstract class ClassUtils {
     /**
      * getJarMainFunction: 获取jar中在Manifest中配置的Main-Class属性值，就是jar在运行的主函数类. <br/>
      *
-     * @author qiyongkang
-     * @param jarFilePath
-     *            jar文件路径
+     * @param jarFilePath jar文件路径
      * @return jar运行时调用的主函数名称
+     * @author qiyongkang
      * @since JDK 1.6
      */
     @SuppressWarnings("resource")

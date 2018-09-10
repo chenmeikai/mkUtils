@@ -26,7 +26,7 @@ public class DateTools {
 
     /**
      * 字符串格式转换为date类型
-     * 
+     *
      * @param strFormat
      * @return
      */
@@ -45,7 +45,7 @@ public class DateTools {
 
     /**
      * 字符串格式转换为date类型
-     * 
+     *
      * @param strFormat
      * @return
      */
@@ -162,7 +162,7 @@ public class DateTools {
 
     /**
      * 以时间为基础创建ID
-     * 
+     *
      * @param name
      * @return
      */
@@ -173,7 +173,7 @@ public class DateTools {
 
     /**
      * 取得字符串格式的当前日期
-     * 
+     *
      * @return
      */
     public static String getCurrDate() {
@@ -185,7 +185,7 @@ public class DateTools {
 
     /**
      * 取得字符串格式的当前时间
-     * 
+     *
      * @return
      */
     public static String getCurrTime() {
@@ -204,7 +204,7 @@ public class DateTools {
 
     /**
      * 获取分钟 秒 毫秒---生成邀请码用
-     * 
+     *
      * @return
      */
     public static String getMillTime() {
@@ -320,10 +320,9 @@ public class DateTools {
 
     /**
      * 获取星期（中文如：‘星期一’）
-     * 
+     *
      * @param date
      * @return String
-     *
      */
     public static String getWeekdayString(String date) {// 必须yyyy-MM-dd
 
@@ -344,7 +343,7 @@ public class DateTools {
 
     /**
      * 根据输入的日期信息来拼写日期返回内容
-     * 
+     *
      * @param pastDate
      * @return
      */
@@ -366,7 +365,7 @@ public class DateTools {
 
     /**
      * 格式化时间
-     * 
+     *
      * @param format
      * @param date
      * @return
@@ -381,7 +380,7 @@ public class DateTools {
 
     /**
      * 格式化时间戳 (yyyy-MM-dd HH:mm:ss)
-     * 
+     *
      * @param date
      * @return
      */
@@ -392,10 +391,9 @@ public class DateTools {
 
     /**
      * 目标时间与当前时间比对
-     * 
+     *
      * @param date
      * @return boolean
-     *
      */
     public static boolean dateCompareNow(String date) {
         Date targetDate = stringToDate(date);
@@ -405,7 +403,7 @@ public class DateTools {
 
     /**
      * 获得时间差（以天为单位）
-     * 
+     *
      * @param startDate
      * @param endDate
      * @return
@@ -455,6 +453,7 @@ public class DateTools {
 
     public static List<HashMap<String, String>> endDateListMap;
     public static List<HashMap<String, String>> endTimeListMap;
+
     static {
         initEndDateListMap();
         initEndTimeListMap();
@@ -509,8 +508,8 @@ public class DateTools {
 
     /**
      * 返回changetime毫秒前的时间，格式yyyy-MM-dd HH：mm：ss
-     * 
-     * @param time yyyy-MM-dd HH：mm：ss
+     *
+     * @param time       yyyy-MM-dd HH：mm：ss
      * @param changetime 往前多少毫秒
      * @return
      */
@@ -532,7 +531,7 @@ public class DateTools {
     /**
      * 计算日期加秒数得到新日期
      *
-     * @param date 日期
+     * @param date    日期
      * @param seconde 秒数
      * @return 日期
      */

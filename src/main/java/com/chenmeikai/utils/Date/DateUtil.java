@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.chenmeikai.utils.date;
 
@@ -8,7 +8,7 @@ import java.text.DateFormat;
 /**
  * @author Administrator
  * @version 2017年8月23日 下午5:48:36
- * 
+ *
  * 时间工具类
  */
 
@@ -27,7 +27,6 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 日期工具类
- * 
  */
 public class DateUtil {
 
@@ -58,7 +57,7 @@ public class DateUtil {
 
     /**
      * 日期格式化yyyy-MM-dd
-     * 
+     *
      * @param date
      * @return
      */
@@ -73,7 +72,7 @@ public class DateUtil {
 
     /**
      * 日期格式化yyyy-MM-dd
-     * 
+     *
      * @param date
      * @return
      */
@@ -83,7 +82,7 @@ public class DateUtil {
 
     /**
      * 日期格式化yyyy-MM-dd HH:mm:ss
-     * 
+     *
      * @param date
      * @return
      */
@@ -93,7 +92,7 @@ public class DateUtil {
 
     /**
      * 时间格式化
-     * 
+     *
      * @param date
      * @return HH:mm:ss
      */
@@ -103,7 +102,7 @@ public class DateUtil {
 
     /**
      * 日期格式化
-     * 
+     *
      * @param date
      * @param 格式类型
      * @return
@@ -117,7 +116,7 @@ public class DateUtil {
 
     /**
      * 日期格式化
-     * 
+     *
      * @param date
      * @return
      */
@@ -132,7 +131,7 @@ public class DateUtil {
 
     /**
      * 时间格式化
-     * 
+     *
      * @param date
      * @return
      */
@@ -147,7 +146,7 @@ public class DateUtil {
 
     /**
      * 获取当前日期(yyyy-MM-dd)
-     * 
+     *
      * @param date
      * @return
      */
@@ -157,7 +156,7 @@ public class DateUtil {
 
     /**
      * 获取当前日期星期一日期
-     * 
+     *
      * @return date
      */
     public static Date getFirstDayOfWeek() {
@@ -169,7 +168,7 @@ public class DateUtil {
 
     /**
      * 获取当前日期星期日日期
-     * 
+     *
      * @return date
      */
     public static Date getLastDayOfWeek() {
@@ -181,7 +180,7 @@ public class DateUtil {
 
     /**
      * 获取日期星期一日期
-     * 
+     *
      * @param 指定日期
      * @return date
      */
@@ -197,7 +196,7 @@ public class DateUtil {
 
     /**
      * 获取日期星期一日期
-     * 
+     *
      * @param 指定日期
      * @return date
      */
@@ -213,7 +212,7 @@ public class DateUtil {
 
     /**
      * 获取当前月的第一天
-     * 
+     *
      * @return date
      */
     public static Date getFirstDayOfMonth() {
@@ -224,7 +223,7 @@ public class DateUtil {
 
     /**
      * 获取当前月的最后一天
-     * 
+     *
      * @return
      */
     public static Date getLastDayOfMonth() {
@@ -237,7 +236,7 @@ public class DateUtil {
 
     /**
      * 获取指定月的第一天
-     * 
+     *
      * @param date
      * @return
      */
@@ -249,7 +248,7 @@ public class DateUtil {
 
     /**
      * 获取指定月的最后一天
-     * 
+     *
      * @param date
      * @return
      */
@@ -263,7 +262,7 @@ public class DateUtil {
 
     /**
      * 获取日期前一天
-     * 
+     *
      * @param date
      * @return
      */
@@ -276,7 +275,7 @@ public class DateUtil {
 
     /**
      * 获取日期后一天
-     * 
+     *
      * @param date
      * @return
      */
@@ -289,7 +288,7 @@ public class DateUtil {
 
     /**
      * 获取当前年
-     * 
+     *
      * @return
      */
     public static int getNowYear() {
@@ -299,7 +298,7 @@ public class DateUtil {
 
     /**
      * 获取当前月份
-     * 
+     *
      * @return
      */
     public static int getNowMonth() {
@@ -309,7 +308,7 @@ public class DateUtil {
 
     /**
      * 获取当月天数
-     * 
+     *
      * @return
      */
     public static int getNowMonthDay() {
@@ -319,7 +318,7 @@ public class DateUtil {
 
     /**
      * 获取时间段的每一天
-     * 
+     *
      * @param 开始日期
      * @param 结算日期
      * @return 日期列表
@@ -344,7 +343,7 @@ public class DateUtil {
 
     /**
      * 获取提前多少个月
-     * 
+     *
      * @param monty
      * @return
      */

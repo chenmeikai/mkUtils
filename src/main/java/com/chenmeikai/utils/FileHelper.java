@@ -1,8 +1,7 @@
 /**
  * File Name:FileHelper.java
  * Date:2017年2月16日下午7:03:25
- *
-*/
+ */
 
 package com.chenmeikai.utils;
 
@@ -16,6 +15,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.zip.CRC32;
 import java.util.zip.CheckedInputStream;
+
 import org.apache.commons.io.FilenameUtils;
 import org.dom4j.Document;
 import org.dom4j.io.OutputFormat;
@@ -547,7 +547,7 @@ public class FileHelper {
     }
 
     /**
-     * 
+     *
      * @描述: 读入文本文件到一个按行分开的List中
      * @作者: liwei
      * @创建日期: 2015年8月24日 下午1:47:47
@@ -560,7 +560,7 @@ public class FileHelper {
     }
 
     /**
-     * 
+     *
      * @描述: 读入文本文件到一个按行分开的List中
      * @作者: liwei
      * @创建日期: 2015年8月24日 下午1:48:28
@@ -735,9 +735,9 @@ public class FileHelper {
     }
 
     /**
-     * 
+     *
      * 描述：根据document生成Xml文件 
-     * 
+     *
      * @param fileName
      *            生成文件的路径
      * @param document
@@ -777,7 +777,7 @@ public class FileHelper {
 
     /**
      * guessPropFile:
-     * 
+     *
      * @param cls
      *            :和要寻找的属性文件处于相同的包中的任意的类
      * @param propFile

@@ -1,8 +1,9 @@
-/**   
- * Copyright © 2018 
- * @Package: Thread.java 
- * @author: Administrator   
- * @date: 2018年3月18日 下午5:10:34 
+/**
+ * Copyright © 2018
+ *
+ * @Package: Thread.java
+ * @author: Administrator
+ * @date: 2018年3月18日 下午5:10:34
  */
 package com.chenmeikai.utils.thread;
 
@@ -25,9 +26,9 @@ public class ThreadUtils {
     static ScheduledExecutorService scheduledThreadPool;
 
     static ExecutorService singleThreadPool;
-    
-    static int MAX_THREAD=5;
-    
+
+    static int MAX_THREAD = 5;
+
     /**
      * 用来创建一个可缓存线程池，该线程池没有长度限制，对于新的任务，如果有空闲的线程，则使用空闲的线程执行，如果没有，则新建一个线程来执行任务。如果线程池长度超过处理需要，可灵活回收空闲线程
      * @param runnable
@@ -39,7 +40,7 @@ public class ThreadUtils {
         cachedThreadPool.submit(runnable);
         return cachedThreadPool;
     }
-    
+
     /**
      * 用来创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。定长线程池的大小通常根据系统资源进行设置
      * @param runnable
@@ -52,7 +53,7 @@ public class ThreadUtils {
         fixedThreadPool.submit(runnable);
         return fixedThreadPool;
     }
-    
+
     /**
      * 用来创建一个定长线程池，并且支持定时和周期性的执行任务
      * @param runnable
@@ -66,7 +67,7 @@ public class ThreadUtils {
         scheduledThreadPool.schedule(runnable, delay, unit);
         return scheduledThreadPool;
     }
-    
+
     /**
      * 用来创建一个定长线程池，并且支持定时和周期性的执行任务
      * @param runnable
@@ -75,13 +76,13 @@ public class ThreadUtils {
      * @param unit  时间单位
      * @return
      */
-    public static ExecutorService scheduledRun(Runnable runnable, long delay,int repeat, TimeUnit unit) {
+    public static ExecutorService scheduledRun(Runnable runnable, long delay, int repeat, TimeUnit unit) {
         if (scheduledThreadPool == null)
             scheduledThreadPool = Executors.newScheduledThreadPool(MAX_THREAD);
-        scheduledThreadPool.scheduleAtFixedRate(runnable, delay,repeat, unit);
+        scheduledThreadPool.scheduleAtFixedRate(runnable, delay, repeat, unit);
         return scheduledThreadPool;
     }
-    
+
     /**
      * 用来创建一个单线程化的线程池，它只用唯一的工作线程来执行任务，一次只支持一个，所有任务按照指定的顺序执行
      * @param runnable
@@ -93,31 +94,32 @@ public class ThreadUtils {
         singleThreadPool.submit(runnable);
         return singleThreadPool;
     }
-    
-    
+
+
     /**
      * 关闭连接池
      */
     public final static void cachedPoolClose() {
-    	 if (cachedThreadPool != null)
-    		 cachedThreadPool.shutdown();
-    }
-    public final static void fixedPoolClose() {
-    	 if (fixedThreadPool != null)
-    		 fixedThreadPool.shutdown();
-    }
-    public final static void scheduledPoolClose() {
-    	 if (scheduledThreadPool != null)
-    		 scheduledThreadPool.shutdown();
-    }
-    public final static void singlePoolClose() {
-    	 if (singleThreadPool != null)
-    		 singleThreadPool.shutdown();
+        if (cachedThreadPool != null)
+            cachedThreadPool.shutdown();
     }
 
-    
-    
-  
+    public final static void fixedPoolClose() {
+        if (fixedThreadPool != null)
+            fixedThreadPool.shutdown();
+    }
+
+    public final static void scheduledPoolClose() {
+        if (scheduledThreadPool != null)
+            scheduledThreadPool.shutdown();
+    }
+
+    public final static void singlePoolClose() {
+        if (singleThreadPool != null)
+            singleThreadPool.shutdown();
+    }
+
+
     public static void main(String[] args) {
         final Long startTime = System.currentTimeMillis();
         ExecutorService executorService = null;
